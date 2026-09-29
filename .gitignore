@@ -3,3 +3,5 @@
 *.log
 .env
 .env.*
+*-raw.mp4
+*-sm.mp4
