@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="64" viewBox="0 0 200 64" fill="none" role="img" aria-label="Orbit Labs">
+  <circle cx="26" cy="32" r="12" fill="none" stroke="#131924" stroke-width="2.5"/><ellipse cx="26" cy="32" rx="18" ry="7" fill="none" stroke="#131924" stroke-width="1.8" transform="rotate(-25 26 32)"/><circle cx="26" cy="32" r="3" fill="#131924"/>
+  <text x="52" y="38" font-family="DM Sans, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0.01em" fill="#131924">Orbit Labs</text>
+</svg>

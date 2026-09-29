@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="64" viewBox="0 0 200 64" fill="none" role="img" aria-label="Northshore">
+  <rect x="12" y="18" width="28" height="28" rx="6" fill="#131924"/><path d="M20 36 V28 L28 22 V36" stroke="#fff" stroke-width="2" fill="none"/>
+  <text x="52" y="38" font-family="DM Sans, Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0.01em" fill="#131924">Northshore</text>
+</svg>

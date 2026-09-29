@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B12"/>
+      <stop offset="45%" stop-color="#0F1A2A"/>
+      <stop offset="100%" stop-color="#173049"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="22%" r="45%">
+      <stop offset="0%" stop-color="#E2FF31" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#E2FF31" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2FF31" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#E2FF31" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#E2FF31" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#base)"/>
+  <circle cx="1500" cy="220" r="420" fill="url(#glow)"/>
+  <g fill="none" stroke="url(#line)" stroke-width="2">
+    <path d="M0 720 C320 610 520 820 860 700 S1400 560 1920 640"/>
+    <path d="M0 820 C360 730 580 900 960 790 S1480 680 1920 760"/>
+  </g>
+  <g opacity="0.08" fill="#E2FF31">
+    <circle cx="240" cy="260" r="3"/><circle cx="320" cy="210" r="2"/><circle cx="410" cy="280" r="2.5"/>
+    <circle cx="1180" cy="540" r="2"/><circle cx="1260" cy="480" r="3"/><circle cx="1340" cy="560" r="2"/>
+  </g>
+  <text x="96" y="980" font-family="DM Sans, Inter, Arial, sans-serif" font-size="72" font-weight="700" fill="#ffffff" opacity="0.06">the aussies</text>
+</svg>

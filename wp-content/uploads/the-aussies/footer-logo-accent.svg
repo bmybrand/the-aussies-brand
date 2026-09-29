@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" fill="none" role="img" aria-label="The Aussies">
+  <g fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 40 C12 36 18 28 28 24 C40 18 52 16 64 22 C70 25 74 32 70 38 C66 34 58 30 50 30"/>
+    <path d="M28 24 C42 10 62 8 78 16 C84 19 86 26 82 32 C78 38 68 40 60 36"/>
+    <path d="M50 30 C48 42 38 50 26 48 C16 46 8 48 4 44"/>
+    <path d="M78 18 L84 10 M82 16 L90 12"/>
+  </g>
+  <text x="104" y="26" font-family="DM Sans, Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">The</text>
+  <text x="104" y="50" font-family="DM Sans, Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#E2FF31">Aussies</text>
+</svg>

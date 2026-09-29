@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="55%" stop-color="#132033"/>
+      <stop offset="100%" stop-color="#1B2A3D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="980" cy="180" r="320" fill="url(#glow)"/>
+  <rect x="64" y="64" width="180" height="10" rx="5" fill="#5EEAD4"/>
+  <rect x="64" y="92" width="120" height="6" rx="3" fill="#ffffff" opacity="0.25"/>
+  <!-- faux UI panels -->
+  <g opacity="0.9">
+    <rect x="64" y="160" width="520" height="280" rx="20" fill="#0F1A2A" stroke="#5EEAD4" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="96" y="200" width="200" height="14" rx="7" fill="#5EEAD4" opacity="0.85"/>
+    <rect x="96" y="236" width="320" height="10" rx="5" fill="#ffffff" opacity="0.2"/>
+    <rect x="96" y="264" width="280" height="10" rx="5" fill="#ffffff" opacity="0.12"/>
+    <rect x="96" y="320" width="140" height="60" rx="12" fill="#5EEAD4" opacity="0.2"/>
+    <rect x="256" y="320" width="140" height="60" rx="12" fill="#ffffff" opacity="0.08"/>
+    <rect x="416" y="320" width="120" height="60" rx="12" fill="#ffffff" opacity="0.08"/>
+  </g>
+  <g opacity="0.85">
+    <rect x="620" y="200" width="480" height="360" rx="20" fill="#0F1A2A" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+    <rect x="660" y="250" width="400" height="12" rx="6" fill="#ffffff" opacity="0.2"/>
+    <rect x="660" y="290" width="300" height="10" rx="5" fill="#ffffff" opacity="0.12"/>
+    <rect x="660" y="330" width="360" height="10" rx="5" fill="#ffffff" opacity="0.1"/>
+    <rect x="660" y="390" width="180" height="90" rx="14" fill="#5EEAD4" opacity="0.25"/>
+    <rect x="860" y="390" width="180" height="90" rx="14" fill="#ffffff" opacity="0.08"/>
+  </g>
+  <g fill="none" stroke="#5EEAD4" stroke-width="3" opacity="0.7">
+      <path d="M860 300 C860 260 900 240 940 260 C970 230 1020 250 1020 290 C1020 330 980 340 940 340 H880 C850 340 860 320 860 300 Z"/></g>
+  <text x="64" y="700" font-family="DM Sans, Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">Cloud & Modernisation</text>
+  <text x="64" y="746" font-family="DM Sans, Inter, Arial, sans-serif" font-size="22" font-weight="500" fill="#5EEAD4">Migrate & scale</text>
+</svg>

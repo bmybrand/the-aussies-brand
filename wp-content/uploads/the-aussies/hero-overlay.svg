@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="veil" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#070B12" stop-opacity="0.82"/>
+      <stop offset="55%" stop-color="#0B1220" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#0B1220" stop-opacity="0.88"/>
+    </linearGradient>
+    <radialGradient id="accent" cx="85%" cy="15%" r="40%">
+      <stop offset="0%" stop-color="#E2FF31" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#E2FF31" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#veil)"/>
+  <circle cx="1600" cy="120" r="380" fill="url(#accent)"/>
+</svg>

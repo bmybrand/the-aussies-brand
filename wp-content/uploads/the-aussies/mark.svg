@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="44" viewBox="0 0 48 44" fill="none" role="img" aria-label="The Aussies">
+  <rect x="2" y="6" width="32" height="32" rx="9" fill="#E2FF31"/>
+  <path d="M10 30 L18 12 L26 30 Z" fill="#0B1220"/>
+  <circle cx="18" cy="25" r="2.5" fill="#E2FF31"/>
+  
+</svg>
