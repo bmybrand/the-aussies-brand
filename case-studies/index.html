@@ -214,6 +214,71 @@
 	padding: 13px 40px 13px 60px;
 }</style>  
 <style data-the-aussies-header="">
+
+  /* Logo + header spacing */
+  header.site-header {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+  header.site-header .container {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  @media (min-width: 768px) {
+    header.site-header .container {
+      padding-left: 44px !important;
+      padding-right: 44px !important;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.site-header .container {
+      padding-left: 56px !important;
+      padding-right: 56px !important;
+    }
+  }
+  header .logo {
+    display: flex !important;
+    align-items: center !important;
+    padding: 4px 32px 4px 4px !important;
+    margin-right: 12px !important;
+    flex-shrink: 0 !important;
+  }
+  header .logo-main {
+    display: flex !important;
+    align-items: center !important;
+    height: 52px !important;
+  }
+  header .logo-main img {
+    height: 40px !important;
+    width: auto !important;
+    max-width: 190px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    padding-top: 2px !important;
+  }
+  header .inner-wrap {
+    gap: 20px !important;
+    min-height: 56px !important;
+  }
+  header .main-nav {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  header .main-nav .menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 4px 18px !important;
+  }
+  header .main-nav .menu > .menu-item > a {
+    white-space: nowrap !important;
+    padding: 8px 0 !important;
+  }
+  header .button-actions {
+    padding-left: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
   /* Sticky header only — preserve original section/type layout from clone */
   header.site-header,
   header {
@@ -519,7 +584,64 @@
     z-index: 30 !important;
   }
 </style>
-</head><body class="wp-singular page-template-default page page-id-1090 wp-theme-dilate"><a href="#main-content" class="skip-to-content">Skip to content</a><style>.skip-to-content {
+
+
+<style data-the-aussies-nav="">
+  /* Inactive header links */
+  .site-header .main-nav .menu > .menu-item > a,
+  .mobile-menu .menu > .menu-item > a {
+    opacity: 0.55;
+    font-weight: 500;
+    transition: opacity .2s ease, color .2s ease;
+  }
+  .site-header .main-nav .menu > .menu-item > a:hover,
+  .mobile-menu .menu > .menu-item > a:hover {
+    opacity: 0.9;
+  }
+  /* Active header link */
+  .site-header .main-nav .menu > .menu-item.current-menu-item > a,
+  .site-header .main-nav .menu > .menu-item.current_page_item > a,
+  .mobile-menu .menu > .menu-item.current-menu-item > a,
+  .mobile-menu .menu > .menu-item.current_page_item > a {
+    opacity: 1 !important;
+    font-weight: 700 !important;
+    color: var(--color2, #E2FF31) !important;
+    position: relative;
+  }
+  .site-header .main-nav .menu > .menu-item.current-menu-item > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--color2, #E2FF31);
+    border-radius: 2px;
+  }
+  /* Footer active */
+  footer .menu > .menu-item > a { opacity: 0.75; }
+  footer .menu > .menu-item.current-menu-item > a,
+  footer .menu > .menu-item.current_page_item > a {
+    opacity: 1;
+    font-weight: 700;
+    color: var(--color2, #E2FF31) !important;
+  }
+</style>
+<style data-the-aussies-images="">
+  .aussies-banner-media { width:100%; overflow:hidden; background:#0B1220; }
+  .aussies-banner-media img {
+    display:block !important; width:100% !important; height:100% !important;
+    object-fit:cover !important; object-position:center !important;
+  }
+  .internal-hero-video.video-expand-wrapper .aussies-banner-media { aspect-ratio:1/0.37; border-radius:0; }
+  @media (max-width:767px) {
+    .internal-hero-video.video-expand-wrapper .aussies-banner-media { aspect-ratio:16/9; }
+  }
+  .about-content-wrap .aussies-banner-media { aspect-ratio:16/9; border-radius:16px; }
+  .team-member-img img { object-fit:cover !important; object-position:center top !important; }
+  .case-study-box img, .img-with-text-area img, .block-image img { object-fit:cover !important; }
+  .hero-video-wrapper video, .hero-video-wrapper .video-toggle, .hero-oembed { display:none !important; }
+</style></head><body class="wp-singular page-template-default page page-id-1090 wp-theme-dilate"><a href="#main-content" class="skip-to-content">Skip to content</a><style>.skip-to-content {
         position: absolute;
         left: -9999px;
         top: auto;
@@ -544,10 +666,10 @@
     }</style>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH7MGJX9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="site-header absolute top-0 left-0 w-full flex flex-col justify-center border-color1 z-10 transition-all duration-300 py-6 internal-header"><div class="container"><div class="inner-wrap flex justify-between items-center w-full"><div class="logo">
 <a href="/" aria-label="The Aussies link">
-<span class="logo-main" style="height: 39px;">
+<span class="logo-main" style="height:48px;">
 <img src="/wp-content/uploads/the-aussies/logo-header.png?v=brand3" alt="The Aussies" width="200" height="48" fetchpriority="high" decoding="sync" style="object-fit:contain;object-position:left center;height:48px;width:auto;max-width:220px;">
 </span>
-</a></div><div class="main-nav menu-desktop flex justify-center items-center"><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div><div class="button-actions flex justify-end items-center gap-5"><div class="mobile-icon">
+</a></div><div class="main-nav menu-desktop flex justify-center items-center"><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item current-menu-item current_page_item"><a href="/case-studies/" aria-current="page">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div><div class="button-actions flex justify-end items-center gap-5"><div class="mobile-icon">
 <a href="#contact-form-popup">
 <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 48 48">
 <path d="M0 0h48v48H0z" fill="none"></path><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M38.735 15.224L24 26.072L9.265 15.224"></path><rect width="39" height="26.582" x="4.5" y="10.709" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" rx="4" ry="4"></rect>
@@ -572,7 +694,7 @@
 </button></div></div></div><div class="mobile-nav mobile-menu-close"><div class="mobile-menu relative">
 <button class="menu-close-btn" aria-label="Mobile menu toggle button">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
-</button><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu-1" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div></div><style>.mobile-menu .menu-item-has-children {
+</button><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu-1" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item current-menu-item current_page_item"><a href="/case-studies/" aria-current="page">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div></div><style>.mobile-menu .menu-item-has-children {
             position: relative;
         }
 
@@ -674,7 +796,7 @@ These case studies share why the work started, how the systems were designed, an
 <button type="button" class="multicolumn-tab control case-pages font-semibold text-color1 bg-color4 py-2 px-4 rounded-3xl text-xs text-center hover:bg-color2 transition b1200:min-w-[134px] min-w-[130px]" data-filter=".ai-training">Training &amp; Enablement</button>
 <button type="button" class="multicolumn-tab control case-pages font-semibold text-color1 bg-color4 py-2 px-4 rounded-3xl text-xs text-center hover:bg-color2 transition b1200:min-w-[134px] min-w-[130px]" data-filter=".ai-strategy">Software Consulting</button>
 <button type="button" class="multicolumn-tab control case-pages font-semibold text-color1 bg-color4 py-2 px-4 rounded-3xl text-xs text-center hover:bg-color2 transition b1200:min-w-[134px] min-w-[130px]" data-filter=".ai-development">Custom Development</button>
-<button type="button" class="multicolumn-tab control case-pages font-semibold text-color1 bg-color4 py-2 px-4 rounded-3xl text-xs text-center hover:bg-color2 transition b1200:min-w-[134px] min-w-[130px]" data-filter=".ai-transformation">Cloud &amp; Modernisation</button></div></div><div id="case-results"><div class="grid grid-cols-1 b767:grid-cols-2 b1024:grid-cols-3 gap-x-6 gap-y-16"><div class="case-study-box ai-development legal relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img fetchpriority="high" decoding="async" width="1024" height="576" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="(max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+<button type="button" class="multicolumn-tab control case-pages font-semibold text-color1 bg-color4 py-2 px-4 rounded-3xl text-xs text-center hover:bg-color2 transition b1200:min-w-[134px] min-w-[130px]" data-filter=".ai-transformation">Cloud &amp; Modernisation</button></div></div><div id="case-results"><div class="grid grid-cols-1 b767:grid-cols-2 b1024:grid-cols-3 gap-x-6 gap-y-16"><div class="case-study-box ai-development legal relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img fetchpriority="high" decoding="async" width="1024" height="576" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="(max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Custom Development</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">SaaS</span></div><h3 class="font-medium normal-case">Northshore Health: Rebuilding patient intake into a secure web portal</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>21 Aug 2026</span> |
 <span>
@@ -682,7 +804,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/settleiq-extending-an-ai-conveyancing-chatbot-to-automatically-review-sale-of-land-contracts/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-transformation mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="756" src="/wp-content/uploads/the-aussies/live/case-logistics.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="(max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-transformation mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="756" src="/wp-content/uploads/the-aussies/live/case-logistics.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="(max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Cloud &amp; Modernisation</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Enterprise</span></div><h3 class="font-medium normal-case">Atlas Logistics: Unifying dispatch APIs across three NSW hubs</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>3 Jul 2026</span> |
 <span>
@@ -690,7 +812,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/fortescue-scaling-ai-across-autonomous-mining-operations-from-pilot-to-production/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-development energy relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="683" src="/wp-content/uploads/the-aussies/live/case-finance.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="(max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-development energy relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="683" src="/wp-content/uploads/the-aussies/live/case-finance.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="(max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Custom Development</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Fintech</span></div><h3 class="font-medium normal-case">Brightfield Finance: Automating month-end reporting with custom integrations</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>24 Jun 2026</span> |
 <span>
@@ -698,7 +820,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/amplitude-energy-giving-the-finance-team-a-week-back-every-month-on-balance-sheet-reconciliation/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-transformation construction relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1000" height="750" src="/wp-content/uploads/the-aussies/live/case-platform.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1000px) 100vw, 1000px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-transformation construction relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1000" height="750" src="/wp-content/uploads/the-aussies/live/case-platform.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1000px) 100vw, 1000px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Cloud &amp; Modernisation</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Retail tech</span></div><h3 class="font-medium normal-case">Maple &amp; Co Boutique: Inventory that finally matches the delivery pipeline</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>18 Jun 2026</span> |
 <span>
@@ -706,7 +828,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/unisol-solar-electrical-giving-a-small-business-owner-1-2-hours-a-day-back-from-admin/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-training energy relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="768" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-training energy relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="768" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Training &amp; Enablement</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Fintech</span></div><h3 class="font-medium normal-case">Chevron: Hands-On Copilot Training Built Around the Instrument Engineering Team’s Own Work</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>26 May 2026</span> |
 <span>
@@ -714,7 +836,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/chevron-hands-on-copilot-training-built-around-the-instrument-engineering-teams-own-work/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-training mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="768" src="/wp-content/uploads/the-aussies/live/case-logistics.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-training mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="768" src="/wp-content/uploads/the-aussies/live/case-logistics.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Training &amp; Enablement</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Enterprise</span></div><h3 class="font-medium normal-case">Rio Tinto: A Copilot Workshop Built Around Real Safety Data, Not Generic Demos</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>15 May 2026</span> |
 <span>
@@ -722,7 +844,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/rio-tinto-a-copilot-workshop-built-around-real-safety-data-not-generic-demos/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-training mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="768" src="/wp-content/uploads/the-aussies/live/case-finance.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-training mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="768" src="/wp-content/uploads/the-aussies/live/case-finance.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Training &amp; Enablement</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Enterprise</span></div><h3 class="font-medium normal-case">BHP: An On-Site Copilot Workshop That Turned a Surveying Team Into software Agent Builders</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>26 Mar 2026</span> |
 <span>
@@ -730,7 +852,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/bhp-an-on-site-copilot-workshop-that-turned-a-surveying-team-into-ai-agent-builders/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-transformation legal relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="576" src="/wp-content/uploads/the-aussies/live/case-platform.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-transformation legal relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="576" src="/wp-content/uploads/the-aussies/live/case-platform.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Cloud &amp; Modernisation</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">SaaS</span></div><h3 class="font-medium normal-case">3Lines: Teaching Regi to Read Handwritten Notes and Scanned Documents</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>6 Mar 2026</span> |
 <span>
@@ -738,7 +860,7 @@ These case studies share why the work started, how the systems were designed, an
 <a href="/case-study/3lines-teaching-regi-to-read-handwritten-notes-and-scanned-documents/" class="case-link btn btn-solidcolor1 inline-flex items-center gap-2 overflow-hidden min-w-0">
 <span class="circle relative"></span>
 <span class="button-text z-10">Read more</span>
-</a></div></div><div class="case-study-box ai-strategy mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=live1" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
+</a></div></div><div class="case-study-box ai-strategy mining relative group flex flex-col justify-between cursor-pointer"><div><div class="portfolio-page-thumbnail mb-6 overflow-hidden rounded-[16px] relative"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=img3" class="w-full aspect-[1/0.65] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;"></div><div><div class="meta-cat flex gap-2 mb-4">
 <span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Software Consulting</span><span class="inline-flex font-semibold text-color1 bg-color4 py-[6px] px-3 rounded-3xl text-xs">Enterprise</span></div><h3 class="font-medium normal-case">Mitsui: Scoping a Roadmap to Cut Maintenance Costs by up to 30% and Boost Planner Productivity by 70%</h3><div class="post-date flex gap-3 text-xs font-normal">
 <span>5 Jan 2026</span> |
 <span>
@@ -761,7 +883,7 @@ Next
 </a>
 <a href="/#services" target="" class="btn outline-color1 text-center overflow-hidden relative z-10">
 Our software services            </a></div></div><div class="iwt-img relative"><div class="overlay-border-color2"></div><div class="ai-text-three text-xs bg-color2 leading-none pt-[5px] pb-[6px] px-[9px] rounded-3xl">&lt;The Aussies&gt;</div>
-<picture class="w-full h-full"><source media="(min-width: 481px)"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/cta.jpg?v=live1" alt="The Aussies project" style="object-fit:cover;object-position:center;width:100%;height:100%;" loading="lazy" width="1400" height="900"></picture></div></div></div></div></section><section id="" data-name="acf_logo-slider" data-lazyload="1" class="relative " style="z-index: 0;"><div class="logo-slider-area pt-[120px]"><div class="container"><div class="logo-slider-title text-center flex items-center justify-center mb-12 b767:mb-16"><div class="ls-title-icon h-[48px] w-[48px] rounded-full bg-color2 flex items-center justify-center"><img src="/wp-content/uploads/the-aussies/icon-mark-dark.png?v=brand2" alt="" width="28" height="28" style="width:28px;height:28px;object-fit:contain;"></div><div class="ls-title bg-color1 text-color4 px-6 h-[48px] flex items-center justify-center rounded-full text-xs b767:text-[18px] font-semibold">Trusted by leading Australia businesses</div></div></div><div class="logo_slider splide overflow-visible"><div class="splide__track overflow-visible"><div class="splide__list flex"><div class="splide__slide"><div class="slider-logo h-full">
+<picture class="w-full h-full"><source media="(min-width: 481px)" srcset="/wp-content/uploads/the-aussies/live/cta.jpg?v=img3"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/cta.jpg?v=img3" alt="Talk to The Aussies" style="object-fit:cover;object-position:center;width:100%;height:100%;" loading="lazy" width="1400" height="900"></picture></div></div></div></div></section><section id="" data-name="acf_logo-slider" data-lazyload="1" class="relative " style="z-index: 0;"><div class="logo-slider-area pt-[120px]"><div class="container"><div class="logo-slider-title text-center flex items-center justify-center mb-12 b767:mb-16"><div class="ls-title-icon h-[48px] w-[48px] rounded-full bg-color2 flex items-center justify-center"><img src="/wp-content/uploads/the-aussies/icon-mark-dark.png?v=brand2" alt="" width="28" height="28" style="width:28px;height:28px;object-fit:contain;"></div><div class="ls-title bg-color1 text-color4 px-6 h-[48px] flex items-center justify-center rounded-full text-xs b767:text-[18px] font-semibold">Trusted by leading Australia businesses</div></div></div><div class="logo_slider splide overflow-visible"><div class="splide__track overflow-visible"><div class="splide__list flex"><div class="splide__slide"><div class="slider-logo h-full">
 <img decoding="async" loading="lazy" style="width: 160px; height: 70px;" width="160" height="70" class="h-[70px] b767:h-[100px] w-[160px] object-contain" src="/wp-content/uploads/the-aussies/partner-8.svg?v=live9" sizes="auto, 160px" alt="The Aussies project"></div></div><div class="splide__slide"><div class="slider-logo h-full">
 <img decoding="async" loading="lazy" style="width: 160px; height: 70px;" width="160" height="70" class="h-[70px] b767:h-[100px] w-[160px] object-contain" src="/wp-content/uploads/the-aussies/partner-1.svg?v=live9" sizes="auto, 160px" alt="The Aussies project"></div></div><div class="splide__slide"><div class="slider-logo h-full">
 <img decoding="async" loading="lazy" style="width: 160px; height: 70px;" width="160" height="70" class="h-[70px] b767:h-[100px] w-[160px] object-contain" src="/wp-content/uploads/the-aussies/partner-2.svg?v=live9" sizes="auto, 160px" alt="The Aussies project"></div></div><div class="splide__slide"><div class="slider-logo h-full">
@@ -791,14 +913,14 @@ Our software services            </a></div></div><div class="iwt-img relative"><
             aspect-ratio: 160 / 100;
         }</style></section></main></div><footer class="relative bg-color1 text-white"><div class="container"><div class="footer-menus grid grid-cols-1 b1024:grid-cols-2 pt-[70px] mb-14"><div class="footer-menu-wrap grid grid-cols-2 b767:grid-cols-3 gap-6"><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Products</span><ul id="nav" class="menu"><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li></ul></div><div class="footer-menu">
-<span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Quick links</span><ul id="nav" class="menu"><li class="menu-item"><a href="/">Home</a></li><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></div><div class="footer-menu">
+<span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Quick links</span><ul id="nav" class="menu"><li class="menu-item"><a href="/">Home</a></li><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item current-menu-item current_page_item"><a href="/case-studies/" aria-current="page">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></div><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Follow us</span><ul id="nav" class="menu footer-social">
   <li class="menu-item"><a target="_blank" rel="noopener" href="https://www.instagram.com/" aria-label="Instagram" class="footer-social-link">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"></circle></svg>
     <span>Instagram</span>
   </a></li>
   <li class="menu-item"><a target="_blank" rel="noopener" href="https://www.linkedin.com/" aria-label="LinkedIn" class="footer-social-link">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V16.5M8 7.5V7.6M12 16.5V12.5C12 11.4 12.9 10.5 14 10.5C15.1 10.5 16 11.4 16 12.5V16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 10.5V16.5M8 7.5V7.6M12 16.5V12.5C12 11.4 12.9 10.5 14 10.5C15.1 10.5 16 11.4 16 12.5V16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
     <span>LinkedIn</span>
   </a></li>
 </ul></div></div><div class="footer-newsletter w-full b1024:max-w-[554px] ml-auto mt-10 b1024:mt-0">
@@ -1892,41 +2014,5 @@ var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","s
 <!-- Guest Mode -->
 
 
-<script data-the-aussies-video="">
-(function () {
-  function bind(wrapper) {
-    if (wrapper.dataset.aussiesVideoBound) return;
-    wrapper.dataset.aussiesVideoBound = "1";
-    var video = wrapper.querySelector("video.hero-video");
-    var button = wrapper.querySelector(".video-toggle");
-    var thumbnail = wrapper.querySelector(".video-thumbnail");
-    if (!video || !button) return;
-    function start() {
-      video.muted = false;
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { video.muted = true; video.play().catch(function(){}); });
-      wrapper.classList.add("is-playing");
-      button.style.opacity = "0";
-      button.style.pointerEvents = "none";
-      if (thumbnail) { thumbnail.style.opacity = "0"; thumbnail.style.pointerEvents = "none"; }
-    }
-    function stop() {
-      video.pause();
-      wrapper.classList.remove("is-playing");
-      button.style.opacity = "1";
-      button.style.pointerEvents = "";
-      if (thumbnail) { thumbnail.style.opacity = "1"; thumbnail.style.pointerEvents = ""; }
-    }
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      if (video.paused) start(); else stop();
-    }, true);
-  }
-  document.querySelectorAll(".hero-video-wrapper").forEach(bind);
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".hero-video-wrapper").forEach(bind);
-  });
-})();
-</script>
+
 </body></html>

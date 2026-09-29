@@ -214,6 +214,71 @@
 	padding: 13px 40px 13px 60px;
 }</style>  
 <style data-the-aussies-header="">
+
+  /* Logo + header spacing */
+  header.site-header {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+  header.site-header .container {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  @media (min-width: 768px) {
+    header.site-header .container {
+      padding-left: 44px !important;
+      padding-right: 44px !important;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.site-header .container {
+      padding-left: 56px !important;
+      padding-right: 56px !important;
+    }
+  }
+  header .logo {
+    display: flex !important;
+    align-items: center !important;
+    padding: 4px 32px 4px 4px !important;
+    margin-right: 12px !important;
+    flex-shrink: 0 !important;
+  }
+  header .logo-main {
+    display: flex !important;
+    align-items: center !important;
+    height: 52px !important;
+  }
+  header .logo-main img {
+    height: 40px !important;
+    width: auto !important;
+    max-width: 190px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    padding-top: 2px !important;
+  }
+  header .inner-wrap {
+    gap: 20px !important;
+    min-height: 56px !important;
+  }
+  header .main-nav {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  header .main-nav .menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 4px 18px !important;
+  }
+  header .main-nav .menu > .menu-item > a {
+    white-space: nowrap !important;
+    padding: 8px 0 !important;
+  }
+  header .button-actions {
+    padding-left: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
   /* Sticky header only — preserve original section/type layout from clone */
   header.site-header,
   header {
@@ -519,7 +584,64 @@
     z-index: 30 !important;
   }
 </style>
-</head><body class="wp-singular page-template-default page page-id-616 page-parent wp-theme-dilate"><a href="#main-content" class="skip-to-content">Skip to content</a><style>.skip-to-content {
+
+
+<style data-the-aussies-nav="">
+  /* Inactive header links */
+  .site-header .main-nav .menu > .menu-item > a,
+  .mobile-menu .menu > .menu-item > a {
+    opacity: 0.55;
+    font-weight: 500;
+    transition: opacity .2s ease, color .2s ease;
+  }
+  .site-header .main-nav .menu > .menu-item > a:hover,
+  .mobile-menu .menu > .menu-item > a:hover {
+    opacity: 0.9;
+  }
+  /* Active header link */
+  .site-header .main-nav .menu > .menu-item.current-menu-item > a,
+  .site-header .main-nav .menu > .menu-item.current_page_item > a,
+  .mobile-menu .menu > .menu-item.current-menu-item > a,
+  .mobile-menu .menu > .menu-item.current_page_item > a {
+    opacity: 1 !important;
+    font-weight: 700 !important;
+    color: var(--color2, #E2FF31) !important;
+    position: relative;
+  }
+  .site-header .main-nav .menu > .menu-item.current-menu-item > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--color2, #E2FF31);
+    border-radius: 2px;
+  }
+  /* Footer active */
+  footer .menu > .menu-item > a { opacity: 0.75; }
+  footer .menu > .menu-item.current-menu-item > a,
+  footer .menu > .menu-item.current_page_item > a {
+    opacity: 1;
+    font-weight: 700;
+    color: var(--color2, #E2FF31) !important;
+  }
+</style>
+<style data-the-aussies-images="">
+  .aussies-banner-media { width:100%; overflow:hidden; background:#0B1220; }
+  .aussies-banner-media img {
+    display:block !important; width:100% !important; height:100% !important;
+    object-fit:cover !important; object-position:center !important;
+  }
+  .internal-hero-video.video-expand-wrapper .aussies-banner-media { aspect-ratio:1/0.37; border-radius:0; }
+  @media (max-width:767px) {
+    .internal-hero-video.video-expand-wrapper .aussies-banner-media { aspect-ratio:16/9; }
+  }
+  .about-content-wrap .aussies-banner-media { aspect-ratio:16/9; border-radius:16px; }
+  .team-member-img img { object-fit:cover !important; object-position:center top !important; }
+  .case-study-box img, .img-with-text-area img, .block-image img { object-fit:cover !important; }
+  .hero-video-wrapper video, .hero-video-wrapper .video-toggle, .hero-oembed { display:none !important; }
+</style></head><body class="wp-singular page-template-default page page-id-616 page-parent wp-theme-dilate"><a href="#main-content" class="skip-to-content">Skip to content</a><style>.skip-to-content {
         position: absolute;
         left: -9999px;
         top: auto;
@@ -544,10 +666,10 @@
     }</style>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH7MGJX9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="site-header absolute top-0 left-0 w-full flex flex-col justify-center border-color1 z-10 transition-all duration-300 py-6 internal-header"><div class="container"><div class="inner-wrap flex justify-between items-center w-full"><div class="logo">
 <a href="/" aria-label="The Aussies link">
-<span class="logo-main" style="height: 39px;">
+<span class="logo-main" style="height:48px;">
 <img src="/wp-content/uploads/the-aussies/logo-header.png?v=brand3" alt="The Aussies" width="200" height="48" fetchpriority="high" decoding="sync" style="object-fit:contain;object-position:left center;height:48px;width:auto;max-width:220px;">
 </span>
-</a></div><div class="main-nav menu-desktop flex justify-center items-center"><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div><div class="button-actions flex justify-end items-center gap-5"><div class="mobile-icon">
+</a></div><div class="main-nav menu-desktop flex justify-center items-center"><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item current-menu-item current_page_item"><a href="/ai-training/" aria-current="page">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div><div class="button-actions flex justify-end items-center gap-5"><div class="mobile-icon">
 <a href="#contact-form-popup">
 <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 48 48">
 <path d="M0 0h48v48H0z" fill="none"></path><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M38.735 15.224L24 26.072L9.265 15.224"></path><rect width="39" height="26.582" x="4.5" y="10.709" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" rx="4" ry="4"></rect>
@@ -572,7 +694,7 @@
 </button></div></div></div><div class="mobile-nav mobile-menu-close"><div class="mobile-menu relative">
 <button class="menu-close-btn" aria-label="Mobile menu toggle button">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
-</button><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu-1" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div></div><style>.mobile-menu .menu-item-has-children {
+</button><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu-1" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item current-menu-item current_page_item"><a href="/ai-training/" aria-current="page">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div></div><style>.mobile-menu .menu-item-has-children {
             position: relative;
         }
 
@@ -673,21 +795,7 @@ We focus on real operational scenarios, so your people leave with clear directio
 <span class="button-text z-10">Talk to our team</span>
 </a>
 <a href="/#services" target="" class="btn outline-color1 text-center overflow-hidden relative z-10">
-Explore Our software Services            </a></div></div></div></div><div class="internal-hero-video video-expand-wrapper"><div class="hero-video-wrapper relative" data-video-src="/wp-content/uploads/the-aussies/live/services-video.mp4?v=live9"><video class="hero-video absolute inset-0 w-full h-full object-cover z-10" playsinline preload="metadata" poster="/wp-content/uploads/the-aussies/live/about.jpg?v=live9" style="width:100%;height:100%;object-fit:cover;">
-<source src="/wp-content/uploads/the-aussies/live/services-video.mp4?v=live9" type="video/mp4">
-</video><div class="desktop-media"><div class="hero-oembed desktop-only w-full h-full"><video class="hero-video absolute inset-0 w-full h-full object-cover z-10" playsinline preload="metadata" poster="/wp-content/uploads/the-aussies/live/services.jpg?v=live9" style="width:100%;height:100%;object-fit:cover;">
-<source src="/wp-content/uploads/the-aussies/live/services-video.mp4?v=live9" type="video/mp4">
-</video></div><div class="hero-oembed mobile-only w-full h-full"><video class="hero-video absolute inset-0 w-full h-full object-cover z-10" playsinline preload="metadata" poster="/wp-content/uploads/the-aussies/live/services.jpg?v=live9" style="width:100%;height:100%;object-fit:cover;">
-<source src="/wp-content/uploads/the-aussies/live/services-video.mp4?v=live9" type="video/mp4">
-</video></div></div><div class="video-thumbnail absolute inset-0 z-20"><picture class="w-full h-full"><source media="(min-width: 481px)" srcset="/wp-content/uploads/the-aussies/live/about.jpg?v=live9"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/about.jpg?v=live9" alt="Australian software team collaborating" style="object-fit:cover;object-position:center;" loading="lazy" width="1600" height="900"></picture></div>
-<button class="video-toggle absolute inset-0 flex items-center justify-center z-30">
-<span class="play-btn flex items-center justify-center">
-<svg width="98" height="98" viewBox="0 0 98 98" fill="none">
-<circle cx="49" cy="49" r="49" fill="#FCFF6A"></circle>
-<path d="M68 49L39.5 65.4545L39.5 32.5455L68 49Z" fill="#131924"></path>
-</svg>
-</span>
-</button></div></div></div></section><section id="" data-name="acf_ai-training-services" data-lazyload="1" class="relative " style="z-index: 0;"><div id="services" class="b1200:py-[112] b1024:py-[100px] py-80"><div class="container"><div class="flex justify-center"><h2 class=" animate-watch standard__headline inline-flex font-semibold text-color1 bg-color4 py-2 px-6 rounded-3xl text-xs super-title">Our training &amp; enablement services</h2></div><div class="grid grid-cols-1 b767:grid-cols-2 gap-x-9 mt-12 b767:mb-16 mb-10 max-w-[1130px] mx-auto text-center b767:text-start"><div class=""><h3 class="h2 animate-watch standard__headline block mb-6 b767:mb-0">Practical, relevant software training</h3></div><div class="summary"><p>Our software workshops are designed to meet your team at their current level of understanding, then work directly with you to apply software to your specific workflows. We focus on practical implementation, not theory-heavy explanations.</p><p>During the session, we collaborate with your team to identify where software can add value across your existing systems and processes.</p><p>Instead of generic examples, we tailor the session to your real tools, real constraints, and real operational priorities, so your people leave knowing exactly how software fits into their day-to-day work.</p></div></div><div class="grid grid-cols-1 b767:grid-cols-2 b1024:grid-cols-3 gap-6"><div class="training-services-list group bg-color4 b1200:py-12 py-9 px-5 b1200:px-11 rounded-[10px] flex flex-col justify-between relative overflow-hidden"><div class="h-full relative"><div class="h-[59px] w-[59px] rounded-full bg-color2 group-hover:bg-color1 duration-[.6s] flex items-center justify-center">
+Explore Our software Services            </a></div></div></div></div><div class="internal-hero-video video-expand-wrapper"><div class="aussies-banner-media"><img decoding="async" src="/wp-content/uploads/the-aussies/live/feature-stack.jpg?v=img3" alt="Training and enablement" width="1920" height="720" loading="lazy"></div></div></div></section><section id="" data-name="acf_ai-training-services" data-lazyload="1" class="relative " style="z-index: 0;"><div id="services" class="b1200:py-[112] b1024:py-[100px] py-80"><div class="container"><div class="flex justify-center"><h2 class=" animate-watch standard__headline inline-flex font-semibold text-color1 bg-color4 py-2 px-6 rounded-3xl text-xs super-title">Our training &amp; enablement services</h2></div><div class="grid grid-cols-1 b767:grid-cols-2 gap-x-9 mt-12 b767:mb-16 mb-10 max-w-[1130px] mx-auto text-center b767:text-start"><div class=""><h3 class="h2 animate-watch standard__headline block mb-6 b767:mb-0">Practical, relevant software training</h3></div><div class="summary"><p>Our software workshops are designed to meet your team at their current level of understanding, then work directly with you to apply software to your specific workflows. We focus on practical implementation, not theory-heavy explanations.</p><p>During the session, we collaborate with your team to identify where software can add value across your existing systems and processes.</p><p>Instead of generic examples, we tailor the session to your real tools, real constraints, and real operational priorities, so your people leave knowing exactly how software fits into their day-to-day work.</p></div></div><div class="grid grid-cols-1 b767:grid-cols-2 b1024:grid-cols-3 gap-6"><div class="training-services-list group bg-color4 b1200:py-12 py-9 px-5 b1200:px-11 rounded-[10px] flex flex-col justify-between relative overflow-hidden"><div class="h-full relative"><div class="h-[59px] w-[59px] rounded-full bg-color2 group-hover:bg-color1 duration-[.6s] flex items-center justify-center">
 <svg class="fill-color1 group-hover:fill-color4 transition duration-[.6s]" width="33" height="14" viewBox="0 0 30 13" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.1112 0C10.1112 5.75168 5.57492 10.4294 0 10.4294V12.6557C5.60316 12.6557 10.3408 8.76349 11.8042 3.46214V12.6329H13.9649V0H10.11H10.1112Z"></path>
 <path d="M19.8559 0H16.001V12.6342H18.1617V3.46214C19.6251 8.76223 24.364 12.6557 29.9659 12.6557V10.4294C24.391 10.4294 19.8547 5.75041 19.8547 0H19.8559Z"></path>
@@ -862,16 +970,16 @@ Signifi Media</div></div><div class="b1600:py-[86px] z-10 b1024:py-60 py-40 b160
 </a>
 <a href="/#services" target="" class="btn outline-color1 text-center overflow-hidden relative z-10">
 View software solutions            </a></div></div><div class="iwt-img relative"><div class="overlay-color2"></div><div class="overlay-color6"></div><div class="ai-text-two text-xs bg-color2 leading-none pt-[5px] pb-[6px] px-[9px] rounded-3xl">&lt;The Aussies&gt;</div>
-<picture class="w-full h-full"><source media="(min-width: 481px)"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/project-5.svg?v=3" alt="The Aussies project" style="object-fit:contain;object-position:center;" loading="lazy" width="553" height="707"></picture></div></div></div></div></section></main></div><footer class="relative bg-color1 text-white"><div class="container"><div class="footer-menus grid grid-cols-1 b1024:grid-cols-2 pt-[70px] mb-14"><div class="footer-menu-wrap grid grid-cols-2 b767:grid-cols-3 gap-6"><div class="footer-menu">
-<span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Products</span><ul id="nav" class="menu"><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li></ul></div><div class="footer-menu">
+<picture class="w-full h-full"><source media="(min-width: 481px)" srcset="/wp-content/uploads/the-aussies/live/cta.jpg?v=img3"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/cta.jpg?v=img3" alt="Talk to The Aussies" style="object-fit:contain;object-position:center;" loading="lazy" width="553" height="707"></picture></div></div></div></div></section></main></div><footer class="relative bg-color1 text-white"><div class="container"><div class="footer-menus grid grid-cols-1 b1024:grid-cols-2 pt-[70px] mb-14"><div class="footer-menu-wrap grid grid-cols-2 b767:grid-cols-3 gap-6"><div class="footer-menu">
+<span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Products</span><ul id="nav" class="menu"><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item current-menu-item current_page_item"><a href="/ai-training/" aria-current="page">Training &amp; Enablement</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li></ul></div><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Quick links</span><ul id="nav" class="menu"><li class="menu-item"><a href="/">Home</a></li><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></div><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Follow us</span><ul id="nav" class="menu footer-social">
   <li class="menu-item"><a target="_blank" rel="noopener" href="https://www.instagram.com/" aria-label="Instagram" class="footer-social-link">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"></circle></svg>
     <span>Instagram</span>
   </a></li>
   <li class="menu-item"><a target="_blank" rel="noopener" href="https://www.linkedin.com/" aria-label="LinkedIn" class="footer-social-link">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V16.5M8 7.5V7.6M12 16.5V12.5C12 11.4 12.9 10.5 14 10.5C15.1 10.5 16 11.4 16 12.5V16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 10.5V16.5M8 7.5V7.6M12 16.5V12.5C12 11.4 12.9 10.5 14 10.5C15.1 10.5 16 11.4 16 12.5V16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
     <span>LinkedIn</span>
   </a></li>
 </ul></div></div><div class="footer-newsletter w-full b1024:max-w-[554px] ml-auto mt-10 b1024:mt-0">
@@ -1965,41 +2073,5 @@ var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","s
 <!-- Guest Mode -->
 
 
-<script data-the-aussies-video="">
-(function () {
-  function bind(wrapper) {
-    if (wrapper.dataset.aussiesVideoBound) return;
-    wrapper.dataset.aussiesVideoBound = "1";
-    var video = wrapper.querySelector("video.hero-video");
-    var button = wrapper.querySelector(".video-toggle");
-    var thumbnail = wrapper.querySelector(".video-thumbnail");
-    if (!video || !button) return;
-    function start() {
-      video.muted = false;
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { video.muted = true; video.play().catch(function(){}); });
-      wrapper.classList.add("is-playing");
-      button.style.opacity = "0";
-      button.style.pointerEvents = "none";
-      if (thumbnail) { thumbnail.style.opacity = "0"; thumbnail.style.pointerEvents = "none"; }
-    }
-    function stop() {
-      video.pause();
-      wrapper.classList.remove("is-playing");
-      button.style.opacity = "1";
-      button.style.pointerEvents = "";
-      if (thumbnail) { thumbnail.style.opacity = "1"; thumbnail.style.pointerEvents = ""; }
-    }
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      if (video.paused) start(); else stop();
-    }, true);
-  }
-  document.querySelectorAll(".hero-video-wrapper").forEach(bind);
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".hero-video-wrapper").forEach(bind);
-  });
-})();
-</script>
+
 </body></html>

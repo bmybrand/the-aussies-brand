@@ -215,6 +215,71 @@
 }</style>  <style id="wp-block-custom-css-inline-css">:root :where(.wp-custom-css-002fef0f.hero-subheading.uppercase ){text-transform: none !important;}
 /*# sourceURL=wp-block-custom-css-inline-css */</style>
 <style data-the-aussies-header="">
+
+  /* Logo + header spacing */
+  header.site-header {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+  header.site-header .container {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  @media (min-width: 768px) {
+    header.site-header .container {
+      padding-left: 44px !important;
+      padding-right: 44px !important;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.site-header .container {
+      padding-left: 56px !important;
+      padding-right: 56px !important;
+    }
+  }
+  header .logo {
+    display: flex !important;
+    align-items: center !important;
+    padding: 4px 32px 4px 4px !important;
+    margin-right: 12px !important;
+    flex-shrink: 0 !important;
+  }
+  header .logo-main {
+    display: flex !important;
+    align-items: center !important;
+    height: 52px !important;
+  }
+  header .logo-main img {
+    height: 40px !important;
+    width: auto !important;
+    max-width: 190px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    padding-top: 2px !important;
+  }
+  header .inner-wrap {
+    gap: 20px !important;
+    min-height: 56px !important;
+  }
+  header .main-nav {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  header .main-nav .menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 4px 18px !important;
+  }
+  header .main-nav .menu > .menu-item > a {
+    white-space: nowrap !important;
+    padding: 8px 0 !important;
+  }
+  header .button-actions {
+    padding-left: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
   /* Sticky header only — preserve original section/type layout from clone */
   header.site-header,
   header {
@@ -520,7 +585,64 @@
     z-index: 30 !important;
   }
 </style>
-</head><body class="home wp-singular page-template-default page page-id-7 wp-theme-dilate"><a href="#main-content" class="skip-to-content">Skip to content</a><style>.skip-to-content {
+
+
+<style data-the-aussies-nav="">
+  /* Inactive header links */
+  .site-header .main-nav .menu > .menu-item > a,
+  .mobile-menu .menu > .menu-item > a {
+    opacity: 0.55;
+    font-weight: 500;
+    transition: opacity .2s ease, color .2s ease;
+  }
+  .site-header .main-nav .menu > .menu-item > a:hover,
+  .mobile-menu .menu > .menu-item > a:hover {
+    opacity: 0.9;
+  }
+  /* Active header link */
+  .site-header .main-nav .menu > .menu-item.current-menu-item > a,
+  .site-header .main-nav .menu > .menu-item.current_page_item > a,
+  .mobile-menu .menu > .menu-item.current-menu-item > a,
+  .mobile-menu .menu > .menu-item.current_page_item > a {
+    opacity: 1 !important;
+    font-weight: 700 !important;
+    color: var(--color2, #E2FF31) !important;
+    position: relative;
+  }
+  .site-header .main-nav .menu > .menu-item.current-menu-item > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--color2, #E2FF31);
+    border-radius: 2px;
+  }
+  /* Footer active */
+  footer .menu > .menu-item > a { opacity: 0.75; }
+  footer .menu > .menu-item.current-menu-item > a,
+  footer .menu > .menu-item.current_page_item > a {
+    opacity: 1;
+    font-weight: 700;
+    color: var(--color2, #E2FF31) !important;
+  }
+</style>
+<style data-the-aussies-images="">
+  .aussies-banner-media { width:100%; overflow:hidden; background:#0B1220; }
+  .aussies-banner-media img {
+    display:block !important; width:100% !important; height:100% !important;
+    object-fit:cover !important; object-position:center !important;
+  }
+  .internal-hero-video.video-expand-wrapper .aussies-banner-media { aspect-ratio:1/0.37; border-radius:0; }
+  @media (max-width:767px) {
+    .internal-hero-video.video-expand-wrapper .aussies-banner-media { aspect-ratio:16/9; }
+  }
+  .about-content-wrap .aussies-banner-media { aspect-ratio:16/9; border-radius:16px; }
+  .team-member-img img { object-fit:cover !important; object-position:center top !important; }
+  .case-study-box img, .img-with-text-area img, .block-image img { object-fit:cover !important; }
+  .hero-video-wrapper video, .hero-video-wrapper .video-toggle, .hero-oembed { display:none !important; }
+</style></head><body class="home wp-singular page-template-default page page-id-7 wp-theme-dilate"><a href="#main-content" class="skip-to-content">Skip to content</a><style>.skip-to-content {
         position: absolute;
         left: -9999px;
         top: auto;
@@ -545,7 +667,7 @@
     }</style>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH7MGJX9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="site-header absolute top-0 left-0 w-full flex flex-col justify-center border-color1 z-10 transition-all duration-300 py-6 home-header"><div class="container"><div class="inner-wrap flex justify-between items-center w-full"><div class="logo">
 <a href="/" aria-label="The Aussies link">
-<span class="logo-main" style="height: 39px;">
+<span class="logo-main" style="height:48px;">
 <img src="/wp-content/uploads/the-aussies/logo-header.png?v=brand3" alt="The Aussies" width="200" height="48" fetchpriority="high" decoding="sync" style="object-fit:contain;object-position:left center;height:48px;width:auto;max-width:220px;">
 </span>
 </a></div><div class="main-nav menu-desktop flex justify-center items-center"><nav class="[&amp;_ul]:mb-0"><ul id="menu-primary-menu" class="menu"><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></nav></div><div class="button-actions flex justify-end items-center gap-5"><div class="mobile-icon">
@@ -665,7 +787,7 @@
             }
 
             
-          }</style></header><div class="overflow-hidden"><main id="main-content" class="blocks__container"><section id="" data-name="acf_main-banner" data-lazyload="1" class="relative wp-custom-css-002fef0f has-custom-css" style="z-index: 0;"><div class="main-banner relative text-color4 pb-16"><div class="hero-bg"><img src="/wp-content/uploads/the-aussies/live/hero-au.jpg?v=live2" alt="The Aussies — Australian Software &amp; IT" style="width:100%;height:100%;object-fit:cover;"></div><div class="container relative"><div class="hero-subheading \hero-animation"><h1 class="h2 animate-watch standard__headline block mb-7 b767:mb-[49px] text-[10px] uppercase font-semibold !leading-[150%] tracking-[15%]" style="height: 30px; overflow: hidden;">AUSTRALIAN SOFTWARE &amp; IT FOR REAL BUSINESS</h1></div><div class="hero-heading \hero-animation"><h2 class="h1 animate-watch standard__headline font-normal block mb-6 b767:mb-10 b767:-tracking-[6px]">Software that works<br>
+          }</style></header><div class="overflow-hidden"><main id="main-content" class="blocks__container"><section id="" data-name="acf_main-banner" data-lazyload="1" class="relative wp-custom-css-002fef0f has-custom-css" style="z-index: 0;"><div class="main-banner relative text-color4 pb-16"><div class="hero-bg"><img src="/wp-content/uploads/the-aussies/live/hero-au.jpg?v=img3" alt="The Aussies — Australian Software &amp; IT" style="width:100%;height:100%;object-fit:cover;"></div><div class="container relative"><div class="hero-subheading \hero-animation"><h1 class="h2 animate-watch standard__headline block mb-7 b767:mb-[49px] text-[10px] uppercase font-semibold !leading-[150%] tracking-[15%]" style="height: 30px; overflow: hidden;">AUSTRALIAN SOFTWARE &amp; IT FOR REAL BUSINESS</h1></div><div class="hero-heading \hero-animation"><h2 class="h1 animate-watch standard__headline font-normal block mb-6 b767:mb-10 b767:-tracking-[6px]">Software that works<br>
 where your business<br>
 needs it</h2></div><div class="hero-bottom-content \hero-animation flex flex-col b1024:flex-row b1024:items-end justify-between gap-10 b1024:gap-5"><div class="flex flex-col-reverse b767:flex-row b767:items-end gap-6 b1200:gap-10 b1400:gap-24"><div class="hero-btn relative">
 <a class="btn btn-solidcolor2 text-[20px] flex items-center gap-3 overflow-hidden" href="#contact-form-popup" target="_self">
@@ -689,17 +811,7 @@ The right stack for your business type</h3></div><div class="box-content text-sm
             height: 575px;
             width: 575px;
           }</style></section><section id="" data-name="acf_about-content" data-lazyload="1" class="relative " style="z-index: 0;"><div class="about-content-area relative b767:pb-[245px] pb-[200px]"><div class="container relative"><div class="ab-title-area flex flex-col b1024:flex-row items-start b1024:gap-[140px] gap-6 b1024:mb-20 mb-10 text-center b1024:text-start">
-<span class="block font-semibold text-color1 bg-color4 py-2 px-6 rounded-3xl text-xs mx-auto b1024:mx-0">About</span><div class="ab-heading w-full b1024:w-auto"><h2 class="h2 animate-watch standard__headline block b1024:max-w-[610px]">Software specialists for Australian teams<br>ready to build and ship</h2></div><div class="ab-logo h-[86px] w-[86px] mx-auto b1024:mx-0 bg-color2 rounded-full flex items-center justify-center"><img src="/wp-content/uploads/the-aussies/icon-mark-dark.png?v=brand2" alt="" width="42" height="42" style="width:42px;height:42px;object-fit:contain;"></div></div><div class="about-content-wrap flex flex-col-reverse b1024:flex-row"><div class="b1400:w-[60%] b1200:w-[58%] b1024:w-[50%] mt-20 b1024:mt-0"><div class="hero-video-wrapper relative" data-video-src="/wp-content/uploads/the-aussies/live/about-video.mp4?v=live9"><video class="hero-video absolute inset-0 w-full h-full object-cover z-10" playsinline preload="metadata" poster="/wp-content/uploads/the-aussies/live/about.jpg?v=live9" style="width:100%;height:100%;object-fit:cover;">
-<source src="/wp-content/uploads/the-aussies/live/about-video.mp4?v=live9" type="video/mp4">
-</video><div class="desktop-media w-full" style="aspect-ratio:16/9;"></div><div class="video-thumbnail absolute inset-0 z-20"><picture class="w-full h-full"><source media="(min-width: 481px)" srcset="/wp-content/uploads/the-aussies/live/about.jpg?v=live9"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/about.jpg?v=live9" alt="Australian software team collaborating" style="object-fit:cover;object-position:center;" loading="lazy" width="1600" height="900"></picture></div>
-<button class="video-toggle absolute inset-0 flex items-center justify-center z-30" aria-label="play video toggle button">
-<span class="play-btn flex items-center justify-center">
-<svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="49" cy="49" r="49" fill="#FCFF6A"></circle>
-<path d="M68 49L39.5 65.4545L39.5 32.5455L68 49Z" fill="#131924"></path>
-</svg>
-</span>
-</button></div></div><div class="ab-content flex flex-col justify-between gap-8 b1400:w-[40%] b1200:w-[42%] b1024:w-[50%] b1400:pl-[80px] b1024:pl-6"><div class="hero-summary text-center b1024:text-start"><p><span class="styles-module__ypzdS">Our team helps Australian businesses pick, install, and run the right software — without the noise or confusion. </span></p><p><span class="styles-module__ypzdS">We focus on what matters on the delivery pipeline: faster deployments, reliable integrations, clear reporting, and dependable engineering support so you can grow with confidence across Australia.</span></p></div><div class="button-wrap flex flex-col b767:flex-row items-center justify-center b1024:justify-start gap-3 overflow-hidden">
+<span class="block font-semibold text-color1 bg-color4 py-2 px-6 rounded-3xl text-xs mx-auto b1024:mx-0">About</span><div class="ab-heading w-full b1024:w-auto"><h2 class="h2 animate-watch standard__headline block b1024:max-w-[610px]">Software specialists for Australian teams<br>ready to build and ship</h2></div><div class="ab-logo h-[86px] w-[86px] mx-auto b1024:mx-0 bg-color2 rounded-full flex items-center justify-center"><img src="/wp-content/uploads/the-aussies/icon-mark-dark.png?v=brand2" alt="" width="42" height="42" style="width:42px;height:42px;object-fit:contain;"></div></div><div class="about-content-wrap flex flex-col-reverse b1024:flex-row"><div class="b1400:w-[60%] b1200:w-[58%] b1024:w-[50%] mt-20 b1024:mt-0"><div class="aussies-banner-media"><img decoding="async" src="/wp-content/uploads/the-aussies/live/about.jpg?v=img3" alt="Australian software team collaborating" width="1920" height="720" loading="lazy"></div></div><div class="ab-content flex flex-col justify-between gap-8 b1400:w-[40%] b1200:w-[42%] b1024:w-[50%] b1400:pl-[80px] b1024:pl-6"><div class="hero-summary text-center b1024:text-start"><p><span class="styles-module__ypzdS">Our team helps Australian businesses pick, install, and run the right software — without the noise or confusion. </span></p><p><span class="styles-module__ypzdS">We focus on what matters on the delivery pipeline: faster deployments, reliable integrations, clear reporting, and dependable engineering support so you can grow with confidence across Australia.</span></p></div><div class="button-wrap flex flex-col b767:flex-row items-center justify-center b1024:justify-start gap-3 overflow-hidden">
 <a href="#contact-form-popup" target="" class="btn btn-solidcolor1 speak-btn flex items-center gap-3 overflow-hidden">
 <span class="block circle relative"></span>
 <span class="button-text z-10">Talk to our team</span>
@@ -809,7 +921,7 @@ Cloud &amp; Modernisation</h3><div class="duration-700 what-we-do-content font-m
         .slider-logo img {
             aspect-ratio: 160 / 100;
         }</style></section><section id="" data-name="acf_case-study" data-lazyload="1" class="relative " style="z-index: 0;"><div class="case-study-area relative b767:py-100 py-80"><div class="container relative"><div class="case-study-title grid grid-cols-1 b767:grid-cols-2 gap-6 items-end b1024:mb-20 mb-10 text-center b767:text-start b1200:px-[120px]"><div><div class="subheading-wrap">
-<span class=" animate-watch standard__headline inline-flex font-semibold text-color1 bg-color4 py-2 px-6 rounded-3xl text-xs mx-auto b767:mx-0 mb-12">Real results for Australian businesses</span></div><div class="heading-wrap w-full b767:w-auto"><h2 class="h2 animate-watch standard__headline block !mb-0">Practical results <br>delivered across <br>Australia</h2></div></div><div class="summary-wrap text-center b767:text-start b1024:pl-[60px] b1400:pl-[140px]"><p>We work with startups, SMEs, and enterprises across Australia to solve delivery, platform, and integration challenges with clear, practical software solutions.</p><p>See how local teams move faster through the release cycle, reduce operational mistakes, and improve reporting with measurable results.</p></div></div><div class="grid grid-cols-1 b767:grid-cols-2 gap-x-6 gap-y-12"><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="576" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=live1" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
+<span class=" animate-watch standard__headline inline-flex font-semibold text-color1 bg-color4 py-2 px-6 rounded-3xl text-xs mx-auto b767:mx-0 mb-12">Real results for Australian businesses</span></div><div class="heading-wrap w-full b767:w-auto"><h2 class="h2 animate-watch standard__headline block !mb-0">Practical results <br>delivered across <br>Australia</h2></div></div><div class="summary-wrap text-center b767:text-start b1024:pl-[60px] b1400:pl-[140px]"><p>We work with startups, SMEs, and enterprises across Australia to solve delivery, platform, and integration challenges with clear, practical software solutions.</p><p>See how local teams move faster through the release cycle, reduce operational mistakes, and improve reporting with measurable results.</p></div></div><div class="grid grid-cols-1 b767:grid-cols-2 gap-x-6 gap-y-12"><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="576" src="/wp-content/uploads/the-aussies/live/case-health.jpg?v=img3" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="Customer story" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
 bg-color3
 h-[32px] w-[32px]
 absolute bottom-8 right-8
@@ -828,7 +940,7 @@ Northshore Health: Rebuilding patient intake into a secure web portal</h3><div c
 <span class="blog-date text-xs font-normal">
 21 Aug 2026                                    </span>
 |<div class="read-time">
-5 min read</div></div></div></div></div><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="756" src="/wp-content/uploads/the-aussies/live/case-logistics.jpg?v=live1" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
+5 min read</div></div></div></div></div><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="756" src="/wp-content/uploads/the-aussies/live/case-logistics.jpg?v=img3" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="Customer story" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
 bg-color3
 h-[32px] w-[32px]
 absolute bottom-8 right-8
@@ -847,7 +959,7 @@ Atlas Logistics: Unifying dispatch APIs across three NSW hubs</h3><div class="po
 <span class="blog-date text-xs font-normal">
 3 Jul 2026                                    </span>
 |<div class="read-time">
-5 min read</div></div></div></div></div><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="683" src="/wp-content/uploads/the-aussies/live/case-finance.jpg?v=live1" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
+5 min read</div></div></div></div></div><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1024" height="683" src="/wp-content/uploads/the-aussies/live/case-finance.jpg?v=img3" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="Customer story" loading="lazy" sizes="auto, (max-width: 1024px) 100vw, 1024px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
 bg-color3
 h-[32px] w-[32px]
 absolute bottom-8 right-8
@@ -866,7 +978,7 @@ Brightfield Finance: Automating month-end reporting with custom integrations</h3
 <span class="blog-date text-xs font-normal">
 24 Jun 2026                                    </span>
 |<div class="read-time">
-5 min read</div></div></div></div></div><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1000" height="750" src="/wp-content/uploads/the-aussies/live/case-platform.jpg?v=live1" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="The Aussies project" loading="lazy" sizes="auto, (max-width: 1000px) 100vw, 1000px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
+5 min read</div></div></div></div></div><div class="case-study-box relative group flex flex-col justify-between"><div class="portfolio-page-thumbnail mb-5 overflow-hidden rounded-[16px] relative"><img decoding="async" width="1000" height="750" src="/wp-content/uploads/the-aussies/live/case-platform.jpg?v=img3" class="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] wp-post-image" alt="Customer story" loading="lazy" sizes="auto, (max-width: 1000px) 100vw, 1000px" style="object-fit:cover;width:100%;height:100%;">                            <span class="flex items-center justify-center
 bg-color3
 h-[32px] w-[32px]
 absolute bottom-8 right-8
@@ -931,16 +1043,16 @@ Taste of Shanghai</div></div><div class="b1600:py-[86px] z-10 b1024:py-60 py-40 
 </a>
 <a href="#services" target="" class="btn outline-color1 text-center overflow-hidden relative z-10">
 View software solutions            </a></div></div><div class="iwt-img relative">
-<picture class="w-full h-full"><source media="(min-width: 481px)"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/cta.jpg?v=live1" alt="The Aussies project" style="object-fit:cover;object-position:center;width:100%;height:100%;" loading="lazy" width="1400" height="900"></picture></div></div></div></div></section></main></div><footer class="relative bg-color1 text-white"><div class="container"><div class="footer-menus grid grid-cols-1 b1024:grid-cols-2 pt-[70px] mb-14"><div class="footer-menu-wrap grid grid-cols-2 b767:grid-cols-3 gap-6"><div class="footer-menu">
+<picture class="w-full h-full"><source media="(min-width: 481px)" srcset="/wp-content/uploads/the-aussies/live/cta.jpg?v=img3"><img decoding="async" class="w-full h-full" src="/wp-content/uploads/the-aussies/live/cta.jpg?v=img3" alt="Talk to The Aussies" style="object-fit:cover;object-position:center;width:100%;height:100%;" loading="lazy" width="1400" height="900"></picture></div></div></div></div></section></main></div><footer class="relative bg-color1 text-white"><div class="container"><div class="footer-menus grid grid-cols-1 b1024:grid-cols-2 pt-[70px] mb-14"><div class="footer-menu-wrap grid grid-cols-2 b767:grid-cols-3 gap-6"><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Products</span><ul id="nav" class="menu"><li class="menu-item"><a href="/ai-strategy/">Software Consulting</a></li><li class="menu-item"><a href="/ai-development/">Custom Development</a></li><li class="menu-item"><a href="/ai-training/">Training &amp; Enablement</a></li><li class="menu-item"><a href="/ai-transformation/">Cloud &amp; Modernisation</a></li></ul></div><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Quick links</span><ul id="nav" class="menu"><li class="menu-item"><a href="/">Home</a></li><li class="menu-item"><a href="/about-us/">About Us</a></li><li class="menu-item"><a href="/case-studies/">Case Studies</a></li><li class="menu-item"><a href="/contact/">Contact Us</a></li></ul></div><div class="footer-menu">
 <span class="block b767:mb-12 mb-8 font-medium text-lg text-color4">Follow us</span><ul id="nav" class="menu footer-social">
   <li class="menu-item"><a target="_blank" rel="noopener" href="https://www.instagram.com/" aria-label="Instagram" class="footer-social-link">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"></circle></svg>
     <span>Instagram</span>
   </a></li>
   <li class="menu-item"><a target="_blank" rel="noopener" href="https://www.linkedin.com/" aria-label="LinkedIn" class="footer-social-link">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V16.5M8 7.5V7.6M12 16.5V12.5C12 11.4 12.9 10.5 14 10.5C15.1 10.5 16 11.4 16 12.5V16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 10.5V16.5M8 7.5V7.6M12 16.5V12.5C12 11.4 12.9 10.5 14 10.5C15.1 10.5 16 11.4 16 12.5V16.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
     <span>LinkedIn</span>
   </a></li>
 </ul></div></div><div class="footer-newsletter w-full b1024:max-w-[554px] ml-auto mt-10 b1024:mt-0">
@@ -2034,41 +2146,5 @@ var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","s
 <!-- Guest Mode -->
 
 
-<script data-the-aussies-video="">
-(function () {
-  function bind(wrapper) {
-    if (wrapper.dataset.aussiesVideoBound) return;
-    wrapper.dataset.aussiesVideoBound = "1";
-    var video = wrapper.querySelector("video.hero-video");
-    var button = wrapper.querySelector(".video-toggle");
-    var thumbnail = wrapper.querySelector(".video-thumbnail");
-    if (!video || !button) return;
-    function start() {
-      video.muted = false;
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { video.muted = true; video.play().catch(function(){}); });
-      wrapper.classList.add("is-playing");
-      button.style.opacity = "0";
-      button.style.pointerEvents = "none";
-      if (thumbnail) { thumbnail.style.opacity = "0"; thumbnail.style.pointerEvents = "none"; }
-    }
-    function stop() {
-      video.pause();
-      wrapper.classList.remove("is-playing");
-      button.style.opacity = "1";
-      button.style.pointerEvents = "";
-      if (thumbnail) { thumbnail.style.opacity = "1"; thumbnail.style.pointerEvents = ""; }
-    }
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      if (video.paused) start(); else stop();
-    }, true);
-  }
-  document.querySelectorAll(".hero-video-wrapper").forEach(bind);
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".hero-video-wrapper").forEach(bind);
-  });
-})();
-</script>
+
 </body></html>
