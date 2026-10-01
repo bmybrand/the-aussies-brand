@@ -1,4 +1,8 @@
 {
+  "framework": null,
+  "buildCommand": "npm run vercel-build",
+  "installCommand": null,
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": true,
   "headers": [
