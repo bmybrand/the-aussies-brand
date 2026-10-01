@@ -1,13 +1,12 @@
 /**
  * Vercel serverless: POST /api/contact
- * Sends form submissions to contact@theaussies.org via Resend.
+ * Handles contact enquiries + newsletter signups via Resend.
  *
  * Env:
  *   RESEND_API_KEY  (required)
- *   RESEND_TO       (default: contact@theaussies.org)
+ *   RESEND_TO       (default: saadnaseeroffice@gmail.com without verified domain)
  *   RESEND_FROM     (default: The Aussies <onboarding@resend.dev>)
- *                   Use a verified domain sender once DNS is set, e.g.
- *                   The Aussies <noreply@theaussies.org>
+ *   RESEND_INTENDED_TO (default: contact@theaussies.org)
  */
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -31,19 +30,23 @@ module.exports = async function handler(req, res) {
         ? JSON.parse(req.body || "{}")
         : req.body || {};
 
+    const type = String(body.type || "contact").trim().toLowerCase();
     const name = String(body.name || "").trim();
     const email = String(body.email || "").trim();
     const phone = String(body.phone || "").trim();
     const message = String(body.message || "").trim();
     const source = String(body.source || "website").trim();
+    const isNewsletter = type === "newsletter";
 
-    if (!name || !email || !message) {
+    if (!email || (!isNewsletter && (!name || !message))) {
       res.statusCode = 400;
       res.setHeader("Content-Type", "application/json");
       return res.end(
         JSON.stringify({
           ok: false,
-          error: "Name, email, and message are required.",
+          error: isNewsletter
+            ? "Email is required."
+            : "Name, email, and message are required.",
         })
       );
     }
@@ -66,18 +69,30 @@ module.exports = async function handler(req, res) {
     const to = process.env.RESEND_TO || "saadnaseeroffice@gmail.com";
     const from =
       process.env.RESEND_FROM || "The Aussies <onboarding@resend.dev>";
-    const intendedTo = process.env.RESEND_INTENDED_TO || "contact@theaussies.org";
+    const intendedTo =
+      process.env.RESEND_INTENDED_TO || "contact@theaussies.org";
 
-    const html = `
-      <h2>New enquiry from The Aussies website</h2>
-      <p><strong>Deliver to (business inbox):</strong> ${escapeHtml(intendedTo)}</p>
-      <p><strong>Source:</strong> ${escapeHtml(source)}</p>
-      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-      <p><strong>Phone:</strong> ${escapeHtml(phone || "—")}</p>
-      <p><strong>Message:</strong></p>
-      <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
-    `;
+    const subject = isNewsletter
+      ? `Newsletter signup → ${intendedTo}`
+      : `Website enquiry from ${name || email} → ${intendedTo}`;
+
+    const html = isNewsletter
+      ? `<h2>Newsletter signup — The Aussies</h2>
+<p><strong>Deliver to (business inbox):</strong> ${escapeHtml(intendedTo)}</p>
+<p><strong>Email:</strong> ${escapeHtml(email)}</p>
+<p><strong>Source:</strong> ${escapeHtml(source)}</p>`
+      : `<h2>New enquiry from The Aussies website</h2>
+<p><strong>Deliver to (business inbox):</strong> ${escapeHtml(intendedTo)}</p>
+<p><strong>Source:</strong> ${escapeHtml(source)}</p>
+<p><strong>Name:</strong> ${escapeHtml(name)}</p>
+<p><strong>Email:</strong> ${escapeHtml(email)}</p>
+<p><strong>Phone:</strong> ${escapeHtml(phone || "—")}</p>
+<p><strong>Message:</strong></p>
+<p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
+
+    const text = isNewsletter
+      ? `Newsletter signup (forward to ${intendedTo})\nEmail: ${email}\nSource: ${source}`
+      : `New enquiry (forward to ${intendedTo})\nSource: ${source}\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "—"}\n\n${message}`;
 
     const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -89,9 +104,9 @@ module.exports = async function handler(req, res) {
         from,
         to: [to],
         reply_to: email,
-        subject: `Website enquiry from ${name} → ${intendedTo}`,
+        subject,
         html,
-        text: `New enquiry (forward to ${intendedTo})\nSource: ${source}\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "—"}\n\n${message}`,
+        text,
       }),
     });
 
@@ -125,4 +140,4 @@ function escapeHtml(s) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-};
+}
