@@ -5,3 +5,5 @@
 .env.*
 *-raw.mp4
 *-sm.mp4
+.vercel
+.env*

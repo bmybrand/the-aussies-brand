@@ -2,9 +2,8 @@
  * Intercept Gravity contact + newsletter forms; submit via /api/contact (Resend).
  */
 (function () {
-  // Live site (theaussies.org) is on a different Vercel team without Resend env;
-  // send through this project which has RESEND_* configured.
-  var ENDPOINT = "https://the-aussies-brand-gray.vercel.app/api/contact";
+  // Same-origin API on Vercel (Resend). Avoid cross-origin fetch — clone boot proxies it to /__clone-proxy (404 on prod).
+  var ENDPOINT = "/api/contact/";
   var CONTACT_FORMS = ["gform_2", "gform_6"];
   var NEWSLETTER_FORMS = ["gform_1"];
 
