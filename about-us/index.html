@@ -1946,4 +1946,24 @@ var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","s
 
 
 
-</body></html>
+<script data-aussies-no-case-nav>
+(function(){
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('a[href*="/case-study/"], .case-link, .case-study-box');
+    if(!t) return;
+    if(t.matches && t.matches('a[href*="/case-studies"]')) return;
+    if(t.closest && t.closest('a[href*="/case-studies"]')) return;
+    // Allow nav to listing page only
+    var a = t.closest ? t.closest('a') : null;
+    if(a && /\/case-studies\/?$/.test(a.getAttribute('href')||'')) return;
+    if(a && (a.getAttribute('href')||'').indexOf('/case-study/') === 0){
+      e.preventDefault(); e.stopPropagation();
+      return false;
+    }
+    if(t.classList && t.classList.contains('case-study-box')){
+      e.preventDefault(); e.stopPropagation();
+      return false;
+    }
+  }, true);
+})();
+</script></body></html>
